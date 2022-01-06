@@ -21,4 +21,4 @@ URL Shortner
 		Response
 			LinkShortnerDTO
 	Main.go
-	App.conf
+	Config file
