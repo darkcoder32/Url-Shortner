@@ -6,6 +6,7 @@ package cmd
 
 import (
 	"fmt"
+	"gin/shorti/routers"
 
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/cobra"
@@ -42,6 +43,7 @@ func init() {
 }
 
 func Serve() {
-	r := gin.Default()
-	r.Run(":8080")
+	router := gin.Default()
+	routers.Init(router)
+	router.Run()
 }
