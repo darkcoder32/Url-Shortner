@@ -7,6 +7,8 @@ package cmd
 import (
 	"fmt"
 	"gin/shorti/routers"
+	"io"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/cobra"
@@ -43,7 +45,13 @@ func init() {
 }
 
 func Serve() {
-	router := gin.Default()
+
+	// adding logs to a file and stdout
+	f, _ := os.Create("gin.log")
+	gin.DefaultWriter = io.MultiWriter(f, os.Stdout)
+
+	// router initialisation
+	router := gin.New()
 	routers.Init(router)
 	router.Run()
 }
