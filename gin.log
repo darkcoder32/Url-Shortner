@@ -1,0 +1,14 @@
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /api/v1/                  --> gin/shorti/routers.Init.func1 (2 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Environment variable PORT is undefined. Using port :8080 by default
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN-debug] redirecting request 301: /api/v1/ --> /api/v1/
+::1 - [Fri, 07 Jan 2022 14:51:48 IST] "GET /api/v1/ HTTP/1.1 200 41.726µs "PostmanRuntime/7.26.8" "
+::1 - [Fri, 07 Jan 2022 14:53:17 IST] "POST /api/v1 HTTP/1.1 404 134ns "PostmanRuntime/7.26.8" "
+[GIN-debug] redirecting request 301: /api/v1/ --> /api/v1/
+::1 - [Fri, 07 Jan 2022 14:53:35 IST] "GET /api/v1/ HTTP/1.1 200 12.516µs "PostmanRuntime/7.26.8" "
