@@ -5,7 +5,11 @@ import (
 )
 
 func Init(router *gin.Engine) {
-	router.GET("/", func(c *gin.Context) {
-		c.JSON(200, "Hello world 2")
-	})
+
+	v1 := router.Group("api/v1")
+	{
+		v1.GET("/", func(c *gin.Context) {
+			c.JSON(200, "Hello world 2")
+		})
+	}
 }
