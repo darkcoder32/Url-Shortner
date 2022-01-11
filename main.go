@@ -6,8 +6,10 @@ package main
 
 import (
 	"gin/shorti/cmd"
+	"gin/shorti/myconfig"
 )
 
 func main() {
+	myconfig.Init()
 	cmd.Execute()
 }

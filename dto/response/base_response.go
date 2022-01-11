@@ -25,6 +25,5 @@ func (g *Gin) FailureResponse(httpCode int, msg string, data interface{}) {
 	g.C.JSON(httpCode, BaseResponse{
 		Status:  httpCode,
 		Message: msg,
-		Error:   msg,
 	})
 }
