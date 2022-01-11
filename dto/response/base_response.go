@@ -21,7 +21,7 @@ func (g *Gin) SuccessResponse(httpCode int, msg string, data interface{}) {
 	})
 }
 
-func (g *Gin) FailureResponse(httpCode int, msg string, data interface{}) {
+func (g *Gin) FailureResponse(httpCode int, msg string, err interface{}) {
 	g.C.JSON(httpCode, BaseResponse{
 		Status:  httpCode,
 		Message: msg,
