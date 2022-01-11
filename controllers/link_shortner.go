@@ -13,18 +13,10 @@ func CreateShortUrl(c *gin.Context) {
 	longUrl := ctx.C.PostForm("long_url")
 	r, err := services.CreateShortUrl(longUrl)
 	if err != nil {
-		ctx.C.JSON(http.StatusUnprocessableEntity, response.BaseResponse{
-			Status:  http.StatusUnprocessableEntity,
-			Message: http.StatusText(http.StatusUnprocessableEntity),
-			Error:   err.Error(),
-		})
+		ctx.FailureResponse(http.StatusUnprocessableEntity, http.StatusText(http.StatusUnprocessableEntity), err.Error())
 		return
 	}
-	ctx.C.JSON(201, response.BaseResponse{
-		Status:  http.StatusCreated,
-		Message: http.StatusText(http.StatusCreated),
-		Data:    r,
-	})
+	ctx.SuccessResponse(http.StatusCreated, http.StatusText(http.StatusCreated), r)
 }
 
 func GetLongUrl(c *gin.Context) {
@@ -32,10 +24,7 @@ func GetLongUrl(c *gin.Context) {
 	uniqueId := ctx.C.Param("uniqueId")
 	r, err := services.GetLongUrl(uniqueId)
 	if err != nil {
-		ctx.C.JSON(404, response.BaseResponse{
-			Status:  404,
-			Message: err.Error(),
-		})
+		ctx.FailureResponse(http.StatusNotFound, http.StatusText(http.StatusNotFound), err.Error())
 		return
 	}
 	ctx.C.Redirect(http.StatusMovedPermanently, r)
