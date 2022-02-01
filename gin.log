@@ -8,6 +8,4 @@
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Environment variable PORT is undefined. Using port :8080 by default
 [GIN-debug] Listening and serving HTTP on :8080
-::1 - [Tue, 11 Jan 2022 20:19:32 IST] "GET /api/v1/url/8sGsVQA HTTP/1.1 404 78.021µs "PostmanRuntime/7.26.8" "
-::1 - [Tue, 11 Jan 2022 20:19:48 IST] "POST /api/v1/url/ HTTP/1.1 201 86.25µs "PostmanRuntime/7.26.8" "
-::1 - [Tue, 11 Jan 2022 20:19:58 IST] "GET /api/v1/url/H0NNEx7 HTTP/1.1 301 798.904µs "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36" "
+127.0.0.1 - [Tue, 01 Feb 2022 18:02:02 IST] "GET /api/v1/url/qYJ7vC5 HTTP/1.1 301 1.119454ms "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36" "

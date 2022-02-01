@@ -11,6 +11,10 @@ import (
 func CreateShortUrl(c *gin.Context) {
 	ctx := response.Gin{C: c}
 	longUrl := ctx.C.PostForm("long_url")
+	if longUrl == "" {
+		ctx.FailureResponse(http.StatusUnprocessableEntity, http.StatusText(http.StatusUnprocessableEntity), "Unprocessable entity")
+		return
+	}
 	r, err := services.CreateShortUrl(longUrl)
 	if err != nil {
 		ctx.FailureResponse(http.StatusUnprocessableEntity, http.StatusText(http.StatusUnprocessableEntity), err.Error())
